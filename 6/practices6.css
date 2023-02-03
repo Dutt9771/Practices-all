@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+#formimage{
+    width: 15px;
+    height: 15px;
+}
+.labels{
+    padding: 5px;
+    margin:4px;
+}
+
+form{
+    margin-top: 30px;
+    
+}
+img{
+    width: 200px;
+    height: 50px;
+}
+button{
+    margin-top: 10px;
+}
+.container {
+    
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}

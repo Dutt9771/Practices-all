@@ -1,0 +1,29 @@
+h2{
+    align-items: center;
+    text-align: center;
+}
+table,td{
+    margin-left: 250px;  
+    margin-right: 250px;  
+    padding: 10px;
+    text-align: center;
+    border: 3px double black;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: lightcyan;
+    margin-left: 250px;  
+    margin-right: 250px;  
+    padding: 10px;
+    text-align: center;
+    border: 3px double black;
+    border-collapse: collapse;
+}
+li{
+    
+    text-align: center;
+}
+B{
+    margin-left: 250px; 
+}

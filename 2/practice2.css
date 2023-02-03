@@ -1,0 +1,27 @@
+.bodyf{
+    display: flex;
+    justify-content: center;
+}
+h1
+{
+    color: black;
+    text-align: center;
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.div1{
+    width: 300px;
+    margin-top: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+h4{
+    color: grey;
+}
