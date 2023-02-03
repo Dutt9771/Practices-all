@@ -2,78 +2,188 @@
 <html>
     <head>
         <link rel="stylesheet" href="practices8.css">
-        
+        <script src="practices8.js"></script>
     </head>
     <body>
-        
-        
-            <form method="POST" name="Your Details" > 
-                <div class="addressform">
-                    <h3 class="h3">Personal Information</h3>
 
-                    <label>First Name : </label>
-                    <input type="text" id="firstname" name="firstname" ></br>
-                    
-                    <label>Last Name : </label>
-                    <input type="text" id="lastname" name="lastname" ></br>
-                    
-                    <label>Date of Birth : </label>
-                    <input type="date" id="date" name="date">
-                    
-                    </br>
-                    
-                    <label>Gender : </label>
-                    <select value="Male"><option value="Select">Select</option>
+        <form method="POST" name="Your Details" id="MyForm">
+            <div class="addressform">
+                <h3 class="h3">Personal Information</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <label>First Name
+                            </label>
+
+                        </td>
+                        <td class="personal">
+                            <input type="text" id="firstname" name="firstname" required="required"></br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <label>Last Name
+                        </label>
+                    </td>
+                    <td class="personal">
+                        <input type="text" id="lastname" name="lastname" ></br>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date of Birth
+                    </label>
+
+                </td>
+                <td class="personal">
+                    <input type="date" id="date" name="date" required="required">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Gender
+                    </label>
+
+                </td>
+                <td class="personal">
+
+                    <select value="Male">
+                        <option value="Select" >Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                    </select></br>
-                    
-                    <h3 class="h3">Account Information</h3>
+                    </select>
+                </br>
+            </td>
+        </tr>
+    </table>
 
-                    <label>Email : </label>
-                    <input type="email" id="email" name="email" ></br>
+    <h3 class="h3">Account Information</h3>
+    <table>
+        <tr>
+            <td>
+                <label>Email
+                </label>
 
-                    <label>Re-Type Email : </label>
-                    <input type="email" id="email" name="email" ></br>
+            </td>
+            <td class="account">
 
-                    <label>Password : </label>
-                    <input type="password" id="password" name="password" ></br>
-                    
-                    <label>Re-Type Password : </label>
-                    <input type="password" id="repassword" name="repassword" ></br>
+                <input type="email" id="email" name="email" required></br>
+        </td>
+    </tr>
+    <tr>
+        <td>
 
-                    <label>Security Questions  : </label>
-                    </br>
+            <label>Re-Type Email
+            </label>
+        </td>
+        <td class="account">
 
-                    <label>Security Answer : </label>
-                    <input type="email" id="email" name="email" ></br>
+            <input type="email" id="email" name="email" required></br>
+    </td>
+</tr>
+<tr>
+    <td>
 
-                    <h3 class="h3">Contact Information</h3>
+        <label>Password
+        </label>
+    </td>
+    <td class="account">
 
-                    <label>Address : </label>
-                    <input type="address" id="address" name="address"></br>
+        <input type="password" id="password" name="password" required></br>
+</td>
+</tr>
+<tr>
+<td>
 
-                    <label>City : </label>
-                    <input type="city" id="city" name="city"></br>
+    <label>Re-Type Password</label>
+</td>
+<td class="account">
+    <input type="password" id="repassword" name="repassword" required></br>
 
-                    <label>State : </label>
-                    <input type="state" id="state" name="state"></br>
+</td>
+</tr>
+<tr>
+<td>
 
-                    <label>Zip Code : </label>
-                    <input type="zipcode" id="zipcode" name="zipcode"></br>
+<label>Security Questions</label>
+</td>
+<td class="account">
+<select value="">
+    <option value="Select">Select Security Option</option>
+    <option value="What is your pat name">What is your pat name</option>
+    <option value="What is your Birth Country name">What is your Birth Country name</option>
+</select>
+</td>
+</tr>
+<tr>
+<td >
 
-                    <label>Phone : </label>
-                    <input type="tel" id="tel" name="tel"></br>
+<label>Security Answer</label>
+</td>
+<td class="account">
+<input type="email" id="email" name="email"></br>
 
-                    <button value="reset">Reset</button>
-                </div>                
-            </form>
+</td>
+</tr>
 
-        
-            
-    
-        
-        
+</table>
+<h3 class="h3">Contact Information</h3>
+<table>
+<tr>
+<td>
+<label>Address</label>
 
-</body>
-</html>
+</td>
+<td class="contact">
+
+<input type="address" id="address" name="address"></br>
+</td>
+</tr>
+<tr>
+<td>
+
+<label>City</label>
+</td>
+<td class="contact">
+
+<input type="city" id="city" name="city"></br>
+</td>
+</tr>
+<tr>
+<td>
+<label>State</label>
+
+</td>
+<td class="contact">
+<input type="state" id="state" name="state"></br>
+
+</td>
+</tr>
+<tr>
+<td >
+<label>Zip Code</label>
+
+</td>
+<td class="contact">
+
+<input type="zipcode" id="zipcode" name="zipcode"></br>
+</td>
+</tr>
+<tr>
+<td>
+
+<label>Phone</label>
+</td>
+<td class="contact">
+<input type="tel" id="tel" name="tel"></br>
+
+</td>
+</tr>
+<tr></tr></table>
+<button type="reset">Reset</button>
+<button type="submit" onclick="submitdata()">Submit</button>
+ </div></form></body></html>

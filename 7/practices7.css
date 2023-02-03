@@ -1,28 +1,46 @@
-.addressform{
+.addressform {
     margin-left: auto;
     margin-right: auto;
     width: 900px;
     justify-content: center;
-    
+
 }
 
-input,button{
+button,
+input {
     margin-right: 10px;
 }
 
-label{
-    
-   margin-right: 100px;
+label {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 100px;
 }
-.address{
+.address {
     margin-top: 20px;
     border: 3px solid lightgray;
 }
 
-.details{
+.details {
+
     margin-top: 15px;
     border: 3px solid lightgray;
 }
 body {
     justify-content: center;
+}
+.subinterest {
+    padding-left: -10px;
+}
+.interest {
+    margin-top: 15px;
+    border: 3px solid lightgray;
+}
+.addresspadding {
+    padding-left: 118px;
+}
+.button {
+    padding-top: 35px;
+    text-decoration-color: black;
+
 }
