@@ -1,3 +1,6 @@
 function submitdata() {
-    document.getElementById(MyForm).onsubmit;
+    var string = "Firstname : "+document.getElementById('firstname').value;
+    document.getElementsByClassName('firstnamediv')[0].innerHTML=string;
+    
+    
 }

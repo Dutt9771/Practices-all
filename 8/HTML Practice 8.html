@@ -6,7 +6,7 @@
     </head>
     <body>
 
-        <form method="POST" name="Your Details" id="MyForm">
+        <form id="MyForm" method="get">
             <div class="addressform">
                 <h3 class="h3">Personal Information</h3>
                 <table>
@@ -51,7 +51,7 @@
                 </td>
                 <td class="personal">
 
-                    <select value="Male">
+                    <select value="Male" id="gender">
                         <option value="Select" >Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -82,7 +82,7 @@
         </td>
         <td class="account">
 
-            <input type="email" id="email" name="email" required></br>
+            <input type="email" id="reemail" name="reemail" required></br>
     </td>
 </tr>
 <tr>
@@ -112,7 +112,7 @@
 <label>Security Questions</label>
 </td>
 <td class="account">
-<select value="">
+<select value="" id="securityquestions">
     <option value="Select">Select Security Option</option>
     <option value="What is your pat name">What is your pat name</option>
     <option value="What is your Birth Country name">What is your Birth Country name</option>
@@ -125,7 +125,7 @@
 <label>Security Answer</label>
 </td>
 <td class="account">
-<input type="email" id="email" name="email"></br>
+<input type="text" id="securityanswer" name="securityanswer"></br>
 
 </td>
 </tr>
@@ -186,4 +186,19 @@
 <tr></tr></table>
 <button type="reset">Reset</button>
 <button type="submit" onclick="submitdata()">Submit</button>
- </div></form></body></html>
+ </div>
+ <br>
+ <div class="firstnamediv"></div>
+<!--<h5>Lastname  : </h5><p span id="lastnameshow"></p>
+<h5>Date of Birth  : </h5><p span id="dateshow"></p>
+<h5>Gender  :</h5> <p span id="gendershow"></p>
+<h5>Email  : </h5><p span id="emailshow"></p>
+<h5>Security Questions  : </h5><p span id="securityquestionsshow"></p>
+<h5>Security Answer  : </h5><p span id="securityanswershow"></p>
+<h5>Address  : </h5><p span id="addressshow"></p>
+<h5>City  : </h5><p span id="cityshow"></p>
+<h5>State  : </h5><p span id="stateshow"></p>
+<h5>Zip Code  : </h5><p span id="zipcodeshow"></p>
+<h5>Pincode  : </h5><p span id="telshow"></p>> -->
+</form>
+</body></html>
