@@ -1,23 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <form action="" method="post">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="practice.css">
+        <script src="practice.js"></script>
+    </head>
+    <body>
+        <form action="" method="post">
 
-        <h4>Information</h4>
-        <h1>Health Care Insurance<sup><img src="plus.png" alt=""></sup></h1>
-        <h5>Complete all answers in capital letters</h5>
+            <h4>Information</h4>
+            <h1>Health Care Insurance<sup><img src="plus.png" alt=""></sup>
+            </h1>
+            <h5>Complete all answers in capital letters</h5>
 
-        <fieldset>
-            <h2>EMPLOYEE STATEMENT</h2>
-            <label for="">Group Contract Number</label>
-            <input type="text" id="text" name="text">
-        </fieldset>
-    </form>
-    </body>
+            <fieldset>
+                <h2>EMPLOYEE STATEMENT</h2>
+
+                <label for="">Group Contract Number
+
+                </label>
+                <input type="text" id="text" name="text" class="text">
+
+                <label for="">Certificate Number</label>
+                <input type="number" id="certificatenumber" name="certificatenumber">
+
+                <br><br>
+
+                <label for="">Employee Last name
+                    <br/>
+                    Given name</label>
+                <input type="name" id="lastname" name="lastname">
+                <label for="">Date Of Birth</label>
+                <input type="date" id="date" name="date"><br><br>
+                <label for="">Employee Address</label>
+                <textarea type="text" id="address" name="address" cols="30" rows="2"></textarea>
+                <br>
+                <h3>Would you like your claims and payments deposited into your bank account?</h3>
+                <input type="checkbox" name="yes" id="yes" onclick="myFunction()">Yes | I have Included a Valid cheque</input>
+                <h5>please note that only a one time valid cheque is required. if you change
+                    your banking information a new void cheque will be needed.
+                </h5>
+
+            </div>
+        </div>
+
+    </fieldset>
+    <fieldset id="showfieldset">
+        <h3>COORDINATION OF BENEFITS</h3>
+        <label>1. Does You're spouse and/or childeren coverage under any other medical
+            plan or contract ?</label>
+        <br>
+        <input
+            type="radio"
+            name="spouse"
+            id="spouseyes"
+            value="Yes"
+            onclick="spouseYes()">
+        <label for="spouseyes">Yes</label>
+        <input type="radio" name="spouse" id="spouseno" value="No" onclick="spouseNo()">
+        <label for="spouseno">No</label>
+
+        <div id="spouseshow">
+            <label>If Yes, spouse's date of birth (dd/mm/yy) ?</label>
+            <input type="date" name="spousesdate" id="spousesdate"><br><br>
+            <label>Insuarance Company , policy number and certificate number</label>
+            <input type="number" name="spousenumber" id="spousenumber">
+        </div>
+        <br>
+        <div>
+            <label >2. Is any expense the result of an accident ?</label><br><br>
+            <input
+                type="radio"
+                name="expense"
+                id="expenseyes"
+                value="Yes"
+                onclick="expenseYes()">
+            <label for="spouseyes">Yes</label>
+            <input
+                type="radio"
+                name="expense"
+                id="expenseno"
+                value="No"
+                onclick="expenseNo()">
+            <label for="spouseno">No</label><br>
+
+            <div id="expenseshow">
+                <label >If yes,Date of accident</label>
+                <input type="date" name="accidentdate" id="accidentdate"><br>
+                <label >location of accident</label>
+                <input type="radio" name="locationaccident" id="Work">Work
+                <input type="radio" name="locationaccident" id="Home">Home
+                <input type="radio" name="locationaccident" id="Other">Other
+                <br>
+                <label>Explain How the accident occurred</label>
+                <textarea name="accident" id="accident"></textarea>
+            </div>
+        </div>
+
+    </fieldset>
+<!--<button type="submit" onclick="submit()">Submit</button>-->
+<h3>DRUGS, VISION CARE, PARAMEDICAL SERVICES <br>AND OTHERS-PATIENT INFORMATION</h3>
+<table class="drugtable"> 
+    <tr>
+        <th>Patient's Name</th>
+        <th>Date of Birth</th>
+        <th>Relationship to Plan Member</th>
+        <th>Total Charge</th>
+    </tr>
+    <tr>
+        <td><input type="text" name="tabletext" id="tabletext"></td>
+        <td><input type="date" name="tabledate" id="tabledate"></td>
+        <td><input type="text" name="relationtext" id="relationtext"></td>
+        <td>₹ 2,00,000.00</td>
+    </tr>
+</table>
+<button onclick="add()">ADD</button>
+</form>
+</body>
 </html>
