@@ -9,7 +9,7 @@
         <script src="practice.js"></script>
     </head>
     <body>
-        <form action="" method="post">
+        <form  method="post">
 
             <h4>Information</h4>
             <h1>Health Care Insurance<sup><img src="plus.png" alt=""></sup>
@@ -102,8 +102,10 @@
 
     </fieldset>
 <!--<button type="submit" onclick="submit()">Submit</button>-->
+</form>
+
 <h3>DRUGS, VISION CARE, PARAMEDICAL SERVICES <br>AND OTHERS-PATIENT INFORMATION</h3>
-<table class="drugtable"> 
+<table id="drugtable"> 
     <tr>
         <th>Patient's Name</th>
         <th>Date of Birth</th>
@@ -114,10 +116,12 @@
         <td><input type="text" name="tabletext" id="tabletext"></td>
         <td><input type="date" name="tabledate" id="tabledate"></td>
         <td><input type="text" name="relationtext" id="relationtext"></td>
-        <td>₹ 2,00,000.00</td>
+        <td id="charges">₹ 2,00,000.00</td>
     </tr>
+    
 </table>
-<button onclick="add()">ADD</button>
-</form>
+<button onclick="add()">ADD</button> &nbsp;&nbsp;<button type="reset" onclick="resetdata()">Reset</button>
+
+
 </body>
 </html>

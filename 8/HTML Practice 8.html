@@ -6,7 +6,8 @@
     </head>
     <body>
 
-        <form id="MyForm" method="get">
+        <form >
+
             <div class="addressform">
                 <h3 class="h3">Personal Information</h3>
                 <table>
@@ -28,7 +29,7 @@
                         </label>
                     </td>
                     <td class="personal">
-                        <input type="text" id="lastname" name="lastname" ></br>
+                        <input type="text" id="lastname" name="lastname"></br>
 
                 </td>
             </tr>
@@ -52,7 +53,7 @@
                 <td class="personal">
 
                     <select value="Male" id="gender">
-                        <option value="Select" >Select</option>
+                        <option value="Select">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -71,7 +72,7 @@
             </td>
             <td class="account">
 
-                <input type="email" id="email" name="email" required></br>
+                <input type="email" id="email" name="email" required="required"></br>
         </td>
     </tr>
     <tr>
@@ -82,7 +83,7 @@
         </td>
         <td class="account">
 
-            <input type="email" id="reemail" name="reemail" required></br>
+            <input type="email" id="reemail" name="reemail" required="required"></br>
     </td>
 </tr>
 <tr>
@@ -93,7 +94,7 @@
     </td>
     <td class="account">
 
-        <input type="password" id="password" name="password" required></br>
+        <input type="password" id="password" name="password" required="required"></br>
 </td>
 </tr>
 <tr>
@@ -102,7 +103,7 @@
     <label>Re-Type Password</label>
 </td>
 <td class="account">
-    <input type="password" id="repassword" name="repassword" required></br>
+    <input type="password" id="repassword" name="repassword" required="required"></br>
 
 </td>
 </tr>
@@ -183,22 +184,4 @@
 
 </td>
 </tr>
-<tr></tr></table>
-<button type="reset">Reset</button>
-<button type="submit" onclick="submitdata()">Submit</button>
- </div>
- <br>
- <div class="firstnamediv"></div>
-<!--<h5>Lastname  : </h5><p span id="lastnameshow"></p>
-<h5>Date of Birth  : </h5><p span id="dateshow"></p>
-<h5>Gender  :</h5> <p span id="gendershow"></p>
-<h5>Email  : </h5><p span id="emailshow"></p>
-<h5>Security Questions  : </h5><p span id="securityquestionsshow"></p>
-<h5>Security Answer  : </h5><p span id="securityanswershow"></p>
-<h5>Address  : </h5><p span id="addressshow"></p>
-<h5>City  : </h5><p span id="cityshow"></p>
-<h5>State  : </h5><p span id="stateshow"></p>
-<h5>Zip Code  : </h5><p span id="zipcodeshow"></p>
-<h5>Pincode  : </h5><p span id="telshow"></p>> -->
-</form>
-</body></html>
+<tr></tr></table><button type="button" onclick="submitdata()">Submit</button><button type="reset">Reset</button><br></form><br> <div id="table"><div class="firstnamediv"></div><br><div class="lastnamediv"></div><br><div class="datediv"></div><br><div class="genderdiv"></div><br><div class="emaildiv"></div><br><div class="securityquestionsdiv"></div><br><div class="securityanswerdiv"></div><br><div class="addressdiv"></div><br><div class="citydiv"></div><br><div class="statediv"></div><br><div class="zipcodediv"></div><br><div class="telediv"></div> </div></div></body></html>

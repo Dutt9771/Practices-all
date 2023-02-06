@@ -50,3 +50,33 @@ function expenseNo(){
         expenseshow.style.display="none";
     }
 }
+function add(){
+    
+    var row = document.getElementById("drugtable");
+    var add = row.insertRow(-1);
+    var x=add.insertCell(0);
+    var y =add.insertCell(1);
+    var z =add.insertCell(2);
+    var w =add.insertCell(3);
+    x.innerHTML= document.getElementById("tabletext").value;
+   y.innerHTML= document.getElementById("tabledate").value;
+    z.innerHTML= document.getElementById("relationtext").value;
+    w.innerHTML= document.getElementById("charges").value= "₹ 2,00,000.00" ;
+}
+
+function resetdata() {
+    
+        var getValue= document.getElementById("tabletext");
+          if (getValue.value !="") {
+              getValue.value = "";
+          }
+          var getValue= document.getElementById("tabledate");
+          if (getValue.value !="") {
+              getValue.value = "";
+          }
+          var getValue= document.getElementById("relationtext");
+          if (getValue.value !="") {
+              getValue.value = "";
+          }
+          
+}
