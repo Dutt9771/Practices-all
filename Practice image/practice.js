@@ -1,4 +1,4 @@
-function myFunction() {
+/*function myFunction() {
     var checkBox = document.getElementById("yes");
     var text = document.getElementById("showfieldset");
     if (checkBox.checked == true){
@@ -7,7 +7,7 @@ function myFunction() {
        text.style.display = "none";
     }
   }
-
+*/
 function spouseYes() {
     var checkspouse = document.getElementById("spouseyes");
     var checktext = document.getElementById("spouseshow");
