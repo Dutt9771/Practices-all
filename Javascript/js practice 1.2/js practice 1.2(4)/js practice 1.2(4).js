@@ -1,22 +1,13 @@
-var Objarr = [
-    {
-        "name": "Dutt Mistry",
-
-        "product": "speaker"
-    }, {
-        "name": "Marmorblad",
-        "product": "Watch"
-    }, {
-        "name": "Aloe Vera",
-        "product": "Mobile Phone"
-    }
-]
-
-for (let key in Objarr) {
-    let value;
-
-    value = "name : " + Objarr[key].name + "<br>Product : " + Objarr[key].product +
-            "<br>";
-    document.write(value);
-
+var Obj = {
+        name: "Dutt Mistry",
+        Age: 21,
+        address : "Baroda"
 }
+
+function newObject(Obj) {
+    const Newobj = new Object();
+    Newobj.name = Obj.name;
+    Newobj.age = Obj.Age;
+    document.write("name"+ " : "+Newobj.name +"<br>"+ "age" +" : "+Newobj.age );
+}
+newObject(Obj);
