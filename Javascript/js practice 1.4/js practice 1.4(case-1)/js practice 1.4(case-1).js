@@ -1,9 +1,14 @@
 
-var aRR= ['Java','Ruby','C#','C++','Kotlin','Dart','Python', 'JavaScript','SQL','Python'];
+var aRR= ["<html>","<head>","</head>","<body>","<p>","this is test element","</br>","</p>","</body>","</html>"];
 
-function sortarr(array){
-    var sortArr = array.sort();
-   document.write("Sorted Array in Alphabetical Order = "+" ["+sortArr+"] ");
+function htmlparser(array){
+    for(var i=0;i<array.length;i++){
+    if(array[i]=="<html>" && array[array.length-1]=="</html>"){
+        document.write("Valid");
+    }
+    else{
+        document.write("Invalid");    
+    }
 }
-document.write("Array ="+" ["+aRR +"]" + "<br>");
-sortarr(aRR);
+}
+htmlparser(aRR)
