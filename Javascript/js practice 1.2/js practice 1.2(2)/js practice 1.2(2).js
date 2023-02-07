@@ -14,12 +14,12 @@ var products = [
     }
 ];
 
-for (let key in products) {
+for (let product of products) {
     let value;
 
     // get the value
-    value = "Name : " + products[key].name + "<br> quantity : " + products[key].quantity +
-            "<br> price : " + products[key].price;
+    value = "Name : " + product.name + "<br> quantity : " + product.quantity +
+            "<br> price : " + product.price;
 
     document.write(value + '<br>');
 }

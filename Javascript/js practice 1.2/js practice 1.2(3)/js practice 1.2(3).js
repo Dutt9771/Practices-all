@@ -12,10 +12,9 @@ var Objarr = [
     }
 ]
 
-for (let key in Objarr) {
-    let value;
-
-    value = "name : " + Objarr[key].name + "<br>Product : " + Objarr[key].product +
+for (let Objar of Objarr) {
+    
+    let value = "name : " + Objar.name + "<br>Product : " + Objar.product +
             "<br>";
     document.write(value);
 

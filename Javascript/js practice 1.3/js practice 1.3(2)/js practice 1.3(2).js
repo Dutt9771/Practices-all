@@ -1,24 +1,10 @@
-var arr=[{
-    firstName: 'John',
-    lastName: 'Doe',
-    age: 27,
-    joinedDate: 'December 15, 2017'
-},
+var arr = ['SQL', 'C#', 'C++', 'Python', 'JavaScript']
+var largeststr="";
 
-{
-    firstName: 'Ana',
-    lastName: 'Rosy',
-    age: 25,
-    joinedDate: 'January 15, 2019'
-},
-
-{
-    firstName: 'Zion',
-    lastName: 'Albert',
-    age: 30,
-    joinedDate: 'February 15, 2011'
-}];
-console.log(arr.firstname.sort())
-function sort(a,b){
-    document.write(a.firstname + b.firstname)
+for(let item of arr){
+ if(item.length>largeststr.length){
+    largeststr=item;
+ }
 }
+document.write("Array Element = " +"["+arr+"]"+"<br>")
+document.write("Largest String  = ",largeststr)
