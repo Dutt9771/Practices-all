@@ -11,7 +11,7 @@ var detail = {
 
 function newObj(firstObj, secondObj) {
     let thirdObj = new Object();
-    thirdObj={firstObj , secondObj}
+    thirdObj=Object.assign(firstObj , secondObj);    
     return thirdObj;
     
 }
