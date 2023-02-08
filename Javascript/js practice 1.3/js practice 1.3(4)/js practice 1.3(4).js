@@ -9,7 +9,9 @@ function deletedarr(array){
 
     }
    }
-   document.write("Deleted Duplicate element in Array = "+"["+array+"]");
+   console.log("Deleted Duplicate element in Array = "+"["+array+"]");
 }
-document.write("Array ="+"["+arr +"]" + "<br>");
+console.log("Array ="+"["+arr +"]" + "<br>");
 deletedarr(arr);
+
+// console.log(new Set(arr));

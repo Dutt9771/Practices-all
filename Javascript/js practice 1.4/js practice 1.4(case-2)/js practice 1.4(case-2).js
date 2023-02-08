@@ -1,9 +1,13 @@
 
-var aRR= ['Java','Ruby','C#','C++','Kotlin','Dart','Python', 'JavaScript','SQL','Python'];
+var htmlStr= "<html><head></head>body></body></html>";
 
-function sortarr(array){
-    var sortArr = array.sort();
-   document.write("Sorted Array in Alphabetical Order = "+" ["+sortArr+"] ");
+var lesserTag= htmlStr.indexOf("<");
+var greaterTag=htmlStr.indexOf(">");
+var html = htmlStr.slice(lesserTag+1,greaterTag)
+// console.log(html)
+
+for(var i=0;i<html.length;i++){
+    for(var j=0;j<html.length;i++){
+     if(html.str)   
+    }
 }
-document.write("Array ="+" ["+aRR +"]" + "<br>");
-sortarr(aRR);

@@ -1,14 +1,14 @@
-
-var aRR= ["<html>","<head>","</head>","<body>","<p>","this is test element","</br>","</p>","</body>","</html>"];
-
-function htmlparser(array){
+let height = [1,8,6,2,5,4,8,3,7]
+function mostwater(array) {
+    
+    var max=0;
     for(var i=0;i<array.length;i++){
-    if(array[i]=="<html>" && array[array.length-1]=="</html>"){
-        document.write("Valid");
+        for(var j=i+1;j<array.length;j++){
+           max = Math.max(max,Math.min((array[i],array[j])*(j-1)))
+        }
     }
-    else{
-        document.write("Invalid");    
-    }
+    console.log( "maximum amount of water a container can store = "+max);
 }
-}
-htmlparser(aRR)
+    
+
+mostwater(height)
