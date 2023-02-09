@@ -30,7 +30,7 @@ if (str && str.length > 0) {
                 // console.log("Poped = ", popedElement);
                 // console.log("Temp = ", temp.substring(1));
                 if(temp.substring(1) !== popedElement){
-                    console.log("Invalid String");
+                    return "Invalid String";
                     break;
                 }
 
@@ -45,7 +45,7 @@ if (str && str.length > 0) {
     
 
     if(arr.length == 0){
-        console.log("Valid String");
+        return "Valid String";
     }
 }
 }
