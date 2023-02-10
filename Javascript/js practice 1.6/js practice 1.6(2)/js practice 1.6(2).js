@@ -20,6 +20,7 @@ function countDecoding(digits, n)
         if (digits[n - 1] > '0')
         {
             count = countDecoding(digits, n - 1);
+           
         }
         // If the last two digits form a number
         // smaller than or equal to 26,
@@ -45,6 +46,6 @@ function countDecoding(digits, n)
     }
      
     // Driver code
-    digits=['1', '2', '3', '4'];
+    digits=['1', '2', '1', '3','4'];
     let n = digits.length;
    console.log("Count is ",countWays(digits, n));
