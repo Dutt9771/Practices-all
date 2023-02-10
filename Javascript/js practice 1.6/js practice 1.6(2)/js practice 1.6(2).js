@@ -47,4 +47,4 @@ function countDecoding(digits, n)
     // Driver code
     digits=['1', '2', '3', '4'];
     let n = digits.length;
-    document.write("Count is ",countWays(digits, n));
+   console.log("Count is ",countWays(digits, n));

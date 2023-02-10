@@ -8,9 +8,9 @@ function PowerSet(array) {
     for (let value of array) { 
        const length = arr.length 
             for (let i = 0; i < length; i++){
-          let temp = arr[i].slice(0) 
-          temp.push(value)
-          arr.push(temp)
+                let temp = arr[i].slice(0) 
+                temp.push(value)
+                arr.push(temp)
         }
     }
     

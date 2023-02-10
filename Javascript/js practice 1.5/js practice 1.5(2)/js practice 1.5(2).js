@@ -17,17 +17,14 @@ function target(num, target) {
 
     console.log(arr);
     let newarr = arr.map((x) => {
-        return x - target;
+        return Math.abs(x - target);
     })
+    newarr
     console.log(newarr);
-    for (let i = 0; i < newarr.length; i++) {
-        if (-1 <= newarr[i] && newarr[i] <= 1) {
-            console.log("Output Is :", arr[i]);
-        } else {
-            continue;
-        }
-    }
-
+    let x=Math.min.apply(Math, newarr);
+    console.log(x)
+    console.log(arr[newarr.indexOf(x)])
+    
 }
 
 target(firNums, 1)
