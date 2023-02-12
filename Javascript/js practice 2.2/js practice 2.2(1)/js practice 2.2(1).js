@@ -24,7 +24,7 @@ cal.onkeyup = function (event) {
     }
 }
 
-// Function that evaluates the digit and return result
+
 function solve() {
     let x = document
         .getElementById("result")
@@ -35,7 +35,7 @@ function solve() {
         .value = y
 }
 
-// Function that clear the display
+
 function clr() {
     document
         .getElementById("result")

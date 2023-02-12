@@ -46,5 +46,25 @@
 // console.log();
 
 // console.log(num);
-str ="GHFhkhghj"
-console.log(str.length);
+// str ="GHFhkhghj"
+// console.log(str.length);
+
+
+let user = [
+    {
+        name: "dg",
+        age: 25,
+        college: {
+            details: {
+                field: {
+                    degree: "BE"
+                }
+            }
+        }
+    }
+]
+
+for(let key of user){
+console.log(key[0].key())
+document.getElementById("tableheaduser").innerHTML=key.name;
+}
