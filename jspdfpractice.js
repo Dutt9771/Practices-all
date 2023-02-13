@@ -50,21 +50,23 @@
 // console.log(str.length);
 
 
-let user = [
-    {
-        name: "dg",
-        age: 25,
-        college: {
-            details: {
-                field: {
-                    degree: "BE"
-                }
-            }
-        }
-    }
-]
+// let user = [
+//     {
+//         name: "dg",
+//         age: 25,
+//         college: {
+//             details: {
+//                 field: {
+//                     degree: "BE"
+//                 }
+//             }
+//         }
+//     }
+// ]
 
-for(let key of user){
-console.log(key[0].key())
-document.getElementById("tableheaduser").innerHTML=key.name;
-}
+// for(let key of user){
+// console.log(key[0].key())
+// document.getElementById("tableheaduser").innerHTML=key.name;
+// }
+
+

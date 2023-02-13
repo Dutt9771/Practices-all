@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js practice 3.1(1)</title>
+    </head>
+<script src="js practice 3.1(1).js"></script>    <body>
+        <form >
+            <tr>
+                <td>
+                    <label for="fname">First Name :</label>
+                </td>
+                <td>
+                    <input type="text" id="fname" name="fname"></td>
+            </tr><br><br>
+            <tr>
+                <td>
+                    <label for="lname">Last Name :</label>
+                </td>
+
+                <td>
+                    <input type="text" id="lname" name="lname"></td>
+            </tr><br><br>
+            <tr>
+
+                <td>
+                    <label for="email">Email :</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email"></td>
+            </tr><br><br>
+            <tr>
+
+                <td>
+                    <label for="number">Mobile Number :</label>
+                </td>
+                <td>
+                    <input type="number" minlength="7" maxlength="10" id="number"></td>
+            </tr>
+            <button type="button" onclick="validateMyData()" id="submit">Submit</button>
+            <div id="err"></div>
+        </form>
+
+    </body>
+</html>
