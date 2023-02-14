@@ -1,45 +1,42 @@
-.body{
-   align-items: center;
-text-align: center;
-justify-content: center;
-display: flex;
-
+.body {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 
 }
-h1
-{
-    
+h1 {
+
     color: black;
     text-align: center;
 }
-h3
-{   
-    
+h3 {
+
     text-align: center;
-    
+
 }
-img{
-    
+img {
+
     height: 315px;
     width: 215px;
-   
+
 }
-.img4{
+.img4 {
 
     background-color: lightgrey;
     background-clip: padding-box;
-    padding: 0px;
+    padding: 0;
     border-width: 2px;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    border-color:white;
+    border-color: white;
     border-style: solid;
     outline-color: grey;
     outline-style: solid;
-    
+
 }
-.bottom{
+.bottom {
     text-align: center;
     margin-left: 290px;
     margin-right: 290px;

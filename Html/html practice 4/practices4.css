@@ -1,16 +1,18 @@
-body{
+body {
     align-items: center;
     text-align: center;
 }
-table,th,td{
-    margin-left: auto;  
+table,
+td,
+th {
+    margin-left: auto;
     padding: 10px;
-    margin-right: auto;  
+    margin-right: auto;
     text-align: center;
     border: 3px double black;
     border-collapse: collapse;
 }
-img{
+img {
     width: 100px;
     height: 100px;
 }

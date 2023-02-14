@@ -1,3 +1,6 @@
+// Create a function that returns Boolean - whether a passed string is 
+// Palindrome or not.
+
 let str = "Ag415ga";
 let strsec = "saippuakivikauppias";
 

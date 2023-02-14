@@ -1,4 +1,7 @@
-let CalDob=(date,month,year)=>{
+// Create a function that calculate age based on the date of birth. “Date of 
+// birth” will be passed via function argument.
+
+let CalDob = (date, month, year) => {
     const Months = [1,2,3,4,5,6,7,8,9,10,11,12];
     let D = new Date()
 let currDate = D.getDate();

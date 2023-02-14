@@ -6,8 +6,12 @@ function submitdata() {
         .getElementsByClassName('firstnamediv')[0]
         .innerHTML = Firstname;
 
-    var Lastname = "Lastname : " + document.getElementById('lastname').value;
-    document.getElementsByClassName('lastnamediv')[0].innerHTML = Lastname;
+    var Lastname = "Lastname : " + document
+        .getElementById('lastname')
+        .value;
+    document
+        .getElementsByClassName('lastnamediv')[0]
+        .innerHTML = Lastname;
 
     var Date = "Date : " + document
         .getElementById('date')
@@ -40,7 +44,9 @@ function submitdata() {
         .innerHTML = Securityquestions;
 
     var Securityanswer = "Security Answer : " + document
-        .getElementById('securityanswer')
+        .getElementById(
+            'securityanswer'
+        )
         .value;
     document
         .getElementsByClassName('securityanswerdiv')[0]

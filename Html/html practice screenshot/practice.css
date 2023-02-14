@@ -1,24 +1,26 @@
-.group{
+.group {
     padding-left: 20px;
     margin-left: 10px;
 }
 .groupdiv {
     display: block;
 }
-#showfieldset{
+#showfieldset {
     /*display: none;*/
 }
-#spouseshow{
+#spouseshow {
     display: none;
 }
-#expenseshow{
+#expenseshow {
     display: none;
 }
-.drugtable,th,td{
+.drugtable,
+td,
+th {
     border: 3px solid blue;
     border-collapse: collapse;
 }
-fieldset{
-    border:4px solid lightblue;
+fieldset {
+    border: 4px solid lightblue;
     margin-top: 10px;
 }

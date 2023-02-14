@@ -6,7 +6,7 @@ const oBj = {
 
 for (let key in oBj) {
     let value;
-    
+
     // get the value
     value = oBj[key];
     document.write(key + " : " + value + '<br>');
@@ -15,11 +15,10 @@ for (let key in oBj) {
 oBj.Name = "Priyanshu";
 for (let key in oBj) {
     let value;
-    
+
     // get the value
     value = oBj[key];
     document.write(key + " : " + value + '<br>');
 }
 
 document.write("After Change in the Object  ");
-

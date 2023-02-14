@@ -1,29 +1,30 @@
-h2{
+h2 {
     align-items: center;
     text-align: center;
 }
-table,td{
-    margin-left: 250px;  
-    margin-right: 250px;  
+table,
+td {
+    margin-left: 250px;
+    margin-right: 250px;
     padding: 10px;
     text-align: center;
     border: 3px double black;
     border-collapse: collapse;
 }
 
-th{
+th {
     background-color: lightcyan;
-    margin-left: 250px;  
-    margin-right: 250px;  
+    margin-left: 250px;
+    margin-right: 250px;
     padding: 10px;
     text-align: center;
     border: 3px double black;
     border-collapse: collapse;
 }
-li{
-    
+li {
+
     text-align: center;
 }
-B{
-    margin-left: 250px; 
+B {
+    margin-left: 250px;
 }

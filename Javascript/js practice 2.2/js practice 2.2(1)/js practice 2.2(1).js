@@ -4,7 +4,6 @@ function dis(val) {
         .value += val
 }
 
-
 function sOlve() {
     let x = document
         .getElementById("result")
@@ -14,7 +13,6 @@ function sOlve() {
         .getElementById("result")
         .value = y
 }
-
 
 function clr() {
     document

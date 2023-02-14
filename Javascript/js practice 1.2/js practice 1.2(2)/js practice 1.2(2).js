@@ -18,8 +18,8 @@ for (let product of products) {
     let value;
 
     // get the value
-    value = "Name : " + product.name + "<br> quantity : " + product.quantity +
-            "<br> price : " + product.price;
+    value = "Name : " + product.name + "<br> quantity : " + product.quantity + "<br" +
+            "> price : " + product.price;
 
     document.write(value + '<br>');
 }

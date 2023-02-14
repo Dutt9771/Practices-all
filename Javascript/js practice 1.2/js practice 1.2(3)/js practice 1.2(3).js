@@ -13,7 +13,7 @@ var Objarr = [
 ]
 
 for (let Objar of Objarr) {
-    
+
     let value = "name : " + Objar.name + "<br>Product : " + Objar.product +
             "<br>";
     document.write(value);

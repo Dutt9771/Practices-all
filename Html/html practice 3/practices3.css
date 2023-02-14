@@ -1,20 +1,21 @@
-body{
+body {
     align-items: center;
     text-align: center;
 }
-table,th,td{
-    margin-left: auto;  
+table,
+td,
+th {
+    margin-left: auto;
     padding: 10px;
-    margin-right: auto;  
+    margin-right: auto;
     text-align: center;
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-#smalltable{
+#smalltable {
     border-spacing: 20px;
     border: 3px double black;
     border-collapse: collapse;
-    
-    
+
 }
