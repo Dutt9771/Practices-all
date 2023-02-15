@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+#reg_div{
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+}
+select{
+    width:170px
+}
+button{
+    width: 210px;
+    background-color: rgb(255, 137, 1);
+    border:1px solid black;
+    border-radius: 5px;
+    width: 170px;
+    height: 30px;
+    
+}
+h4{
+    text-align: center;
+}
+
+error{
+ font-size: 10px;
+ margin-top: 3px;
+ color: red;
+ display: block;
+}

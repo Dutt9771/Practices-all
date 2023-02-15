@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="registration.css">
+    <script src="registration.js"></script>
+</head>
+<body>
+    <div>
+        <h4>Registration</h4>
+        <form  autocomplete="on" >
+        <div id="reg_div">
+            
+                <input type="text" name="fname" id="fname" placeholder="Name" required><br><br>
+                
+
+                <input type="email" name="email" id="email" placeholder="Email Address" required><br><br>
+                <input type="password" name="pwd" id="pwd"  placeholder="Password" required><br><br>
+                <input type="password" name="confpwd" onkeyup="matchPassword(this)" id="confpwd" placeholder="Confirm Password" required>
+                <error id="pwderr"></error>
+                
+                
+            <br>
+            <select id="inputDistrict">
+                <option value="">Select District</option>
+              
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Baroda">Baroda</option>
+
+            </select><br><br>
+            <select id="inputState">
+                <option value="SelectState">Select State</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharastra">Maharastra</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="West Bangal">West Bangal</option>
+                <option value="Uttrakhand">Uttrakhand</option></select><br><br>
+                <input type="checkbox" id="checkbox" required> <label>Terms & Conditions</label> 
+                <br><br>
+                <button type="button" onclick="signUp()">Registration</button>
+        </div>
+        <span id="msg"></span>
+    </div>
+</form>
+</body>
+</html>

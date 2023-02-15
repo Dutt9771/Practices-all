@@ -1,0 +1,53 @@
+#users{
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+}
+#user18{
+    margin-right: 50px;
+    border: 2px solid black;
+    height: 120px;
+    width: 150px;
+    text-align: center;
+}
+#user18_50{
+    margin-right: 50px;
+    border: 2px solid black;
+    height: 120px;
+    width: 150px;
+    text-align: center;
+}
+#user50{
+    
+    border: 2px solid black;
+    height: 120px;
+    width: 150px;
+    text-align: center;
+}
+.sidenav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: lightgray;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  #main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+  }

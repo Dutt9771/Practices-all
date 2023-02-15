@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="user.js"></script>
+    <script src="dashboard.js"></script>
+</head>
+<body >
+    <div class="sidenav">
+            
+        Hello,<span id="username"></span>
+         
+             <a href="dashboard.html">Dashboard</a>
+         
+         
+             <a href="user.html">User</a>
+         
+             <a href="loginsession.html">Login Session</a>
+         
+             <a href="login.html" onclick="logOut()">Logout</a>
+     
+ </div>
+ <div id="main" onload="agediv()">
+     
+     <div id="users">
+         <div id="user18">
+    <h4>User < 18 Years</h4>
+    <h4 id="greater18"></h4>
+</div>
+<div id="user18_50">
+    <h4>18-50 Years Users</h4>
+    <h4 id="18to50"></h4>
+</div>
+<div id="user50">
+    <h4>Users > 50 Years</h4>
+    <h4 id="greater50"></h4>
+</div>
+<span id="displayBirthday"></span>
+</div>
+
+      
+</div>
+</body>
+</html>

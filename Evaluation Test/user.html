@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Users</title>
+        <script src="user.js"></script>
+        <link rel="stylesheet" href="user.css">
+    </head>
+    <body onload="cells()"> 
+        
+        <div class="sidenav">
+            
+               Hello,<span id="username"></span>
+                
+                    <a href="dashboard.html">Dashboard</a>
+                
+                
+                    <a href="user.html">User</a>
+                
+                    <a href="loginsession.html">Login Session</a>
+                
+                <a href="login.html">Logout</a>
+            
+        </div>
+       
+        <div id="main">
+
+            <h4>ADD User</h4>
+            <form >
+                <input type="text" id="name" placeholder="Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <input type="date" id="date">
+                <button type="button" id="userbtn" onclick="addUser()">ADD User</button>
+            </form>
+            <table id="myTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Birthdate</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+                </table>
+        </div>
+        <script src="user.js"></script>
+    </body>
+</html>
