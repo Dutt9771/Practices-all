@@ -15,10 +15,23 @@ for (i = 0; i < getData.length; i++) {
 
     cell1.innerHTML = getData[i].Name;
     cell2.innerHTML = getData[i].login_date_time;
+    cell3.innerHTML=getData[i].logout_date_time;
    
 }}
-loginStr = localStorage.getItem('Admin');
-    loginObj = JSON.parse(loginStr);
-    document
-        .getElementById('username')
-        .innerHTML = loginObj.Name;
+function logOut() {
+
+    getData = JSON.parse(localStorage.getItem('Session'));
+    currUser = localStorage.getItem('SessionUser');
+    for (let i = 0; i < getData.length; i++) {  
+        let logoutTime = new Date();
+    // let logout_time_date = { 'Logout_time_date': logoutTime };
+    if (currUser == getData[i].Name) {
+        getData[i].logout_date_time = logoutTime;
+        console.log(typeof(JSON.stringify(getData)));
+    }
+}
+
+localStorage.setItem('Session', JSON.stringify(getData));
+window.location.href = 'login.html';
+localStorage.removeItem('SessionUser');
+}

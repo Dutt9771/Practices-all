@@ -1,13 +1,29 @@
+function AgeCalculate(Birthdate){
+    var Arr=[]
+    let date=new Date()
+    strDate = JSON.stringify(date);
+        let temp=JSON.stringify(Birthdate).slice(1,5)
+
+        console.log(Birthdate)
+        let currDate = strDate.slice(1, 5)
+        let Age=currDate-temp;
+        Arr.push(Age)
+        console.log(Age)
+        
+    }
+AgeCalculate("2002-10-18")
 
 loginStr = localStorage.getItem('Admin');
 loginObj = JSON.parse(loginStr);
     document
     .getElementById('username')
         .innerHTML = loginObj.Name;
-        function cells(){ 
-            getData = JSON.parse(localStorage.getItem('Users'));
-let myTable = document.getElementById('myTable');
-
+function cells() {
+    
+    getData = JSON.parse(localStorage.getItem('Users'));
+    
+    let myTable = document.getElementById('myTable');
+    
 for (i = 0; i < getData.length; i++) {
     
     
@@ -27,13 +43,27 @@ for (i = 0; i < getData.length; i++) {
     cell3.innerHTML = getData[i].Password;
     cell4.innerHTML = getData[i].Birthdate.split("-").reverse().join("-")
     cell5.innerHTML = 2023 - arr[0];
-    cell6.innerHTML = `<button onclick="edit()">Edit</button><button onclick="deleteUser()">Delete</button>`;
+    cell6.innerHTML = `<button onclick="edit(${i})">Edit</button><button onclick="deleteUser(${i})">Delete</button>`;
     let Age= 2023-arr[0]
     
     
-}}
+}
+}
+function deleteUser(item){
+    getData = JSON.parse(localStorage.getItem('Users'));
+    // var parentRowIndex = currElement.parentNode.parentNode.rowIndex;
+    getData.splice(item,1)
+
+    // document.getElementById("myTable").deleteRow(item);
+    localStorage.setItem("Users", JSON.stringify(getData))
+    window.location.reload() 
+
+   
+}
 
 function addUser() {
+    
+    
     let username = document
         .getElementById('name')
         .value
@@ -46,61 +76,78 @@ function addUser() {
         let userdob = document
         .getElementById('date')
         .value
-        
-        userObj = {
-        "Name": username,
-        "Email": useremail,
-        "Password": userpass,
-        "Birthdate": userdob
-    };
-    
-    let x = JSON.stringify([]);
-    if (!localStorage.getItem('Users')) {
+      if(username!=="" || useremail!=="" || userpass!=="" || userdob!=="")  {
+
+          userObj = {
+              "Name": username,
+              "Email": useremail,
+              "Password": userpass,
+              "Birthdate": userdob
+            };
+            
+            let x = JSON.stringify([]);
+            if (!localStorage.getItem('Users')) {
         localStorage.setItem('Users', x);
     }
     let userData = JSON.parse(localStorage.getItem('Users'));
     userData.push(userObj);
     localStorage.setItem("Users", JSON.stringify(userData));
-
+    
     window
-        .location
-        .reload();
-
+    .location
+    .reload();
+}else{
+    document.getElementById("err").innerHTML="Please Enter All Details"
 }
-
-function edit() {
-    document
-        .getElementById("userbtn")
-        .innerText = "Update User";
-        getData = JSON.parse(localStorage.getItem('Users'));
-
-        
-        
-}
-
-function username() {
-    loginStr = localStorage.getItem('formData');
-    loginObj = JSON.parse(loginStr);
-    let storename = loginDataObj.fname;
-    document
-    .getElementById('username')
-    .innerText = storename;
+    
 }
 
 
-
-    function deleteUser(ele){
-        var table = document.getElementById('myTable');
-        var rowCount = table.rows.length;
-        if(rowCount <= 1){
-            alert("There is no row available to delete!");
-            return;
-        }
-        if(ele){
-            //delete specific row
-            ele.parentNode.parentNode.remove();
-        }else{
-            //delete last row
-            table.deleteRow(rowCount-1);
-        }
+    function edit(index) {
+        let users = JSON.parse(localStorage.getItem("Users"));
+        let user = users[index];
+        document.getElementById("name").value = user.Name;
+        document.getElementById("email").value = user.Email;
+        document.getElementById("password").value = user.Password;
+        document.getElementById("date").value = user.Birthdate;
+        document.getElementById("userbtn").innerHTML = "Update User";
+        document.getElementById("userbtn").setAttribute("onclick", `updateUser(${index})`);
     }
+    // Updating the user
+
+function updateUser(index) {
+    let users = JSON.parse(localStorage.getItem("Users"));
+    let user = users[index];
+    user.Name = document.getElementById("name").value;
+    user.Email = document.getElementById("email").value;
+    user.Password = document.getElementById("password").value;
+    user.Birthdate = document.getElementById("date").value;
+   let birth=user.Birthdate
+    user.age = AgeCalculate(birth);
+    localStorage.setItem("Users", JSON.stringify(users));
+    document.getElementById("userbtn").innerHTML = "Add User";
+    document.getElementById("userbtn").setAttribute("onclick", `addUser()`);
+    window.location.reload()
+
+        
+        
+}
+
+
+function logOut() {
+
+    getData = JSON.parse(localStorage.getItem('Session'));
+    currUser = localStorage.getItem('SessionUser');
+    for (let i = 0; i < getData.length; i++) {  
+        let logoutTime = new Date();
+    // let logout_time_date = { 'Logout_time_date': logoutTime };
+    if (currUser == getData[i].Name) {
+        getData[i].logout_date_time = logoutTime;
+        console.log(typeof(JSON.stringify(getData)));
+    }
+}
+
+localStorage.setItem('Session', JSON.stringify(getData));
+window.location.href = 'login.html';
+localStorage.removeItem('SessionUser');
+}

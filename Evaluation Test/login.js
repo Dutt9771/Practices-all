@@ -1,25 +1,44 @@
-function login() {
+// let email = document
+// .getElementById('email')
+// .value;
+// let pwd = document
+// .getElementById('pwd')
+// .value;
+loginStr = localStorage.getItem('Admin');
+loginObj = JSON.parse(loginStr);
 
+let storeEmail = loginObj.Email;
+let storePass = loginObj.Password;
+
+if (storeEmail!="" && storePass!="") {
+    document.getElementById("loginButton").style.display="none";
+    document.getElementById("Ortag").style.display="none";
+}
+
+
+function login() {
     let email = document
-        .getElementById('email')
-        .value;
+    .getElementById('email')
+    .value;
     let pwd = document
-        .getElementById('pwd')
-        .value;
+    .getElementById('pwd')
+    .value;
     loginStr = localStorage.getItem('Admin');
     loginObj = JSON.parse(loginStr);
-
+    
     userloginStr = localStorage.getItem('Users');
     userloginObj = JSON.parse(userloginStr);
-
+    
     let storeEmail = loginObj.Email;
     let storePass = loginObj.Password;
-
-console.log(storeEmail)
-console.log(storePass)
     if (email != "" || pwd != "") {
         if (email == storeEmail && pwd == storePass) {
             document.getElementById("msg").innerText="Welcome Admin";
+            for (i = 0; i < userloginObj.length; i++) {
+                
+                let userstoreName=userloginObj[i].Name;
+                localStorage.setItem("SessionUser", userstoreName);
+            }
             window
                 .location
                 .href=("dashboard.html")
@@ -41,7 +60,7 @@ console.log(storePass)
                     document.getElementById("msg").innerText="Welcome User";
                     window.location.href = "userlogin.html";
                 }
-                
+                localStorage.setItem("SessionUser", userstoreName);
             }
         }
     } else {

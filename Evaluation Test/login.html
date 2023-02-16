@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
-    <script src="login.js"></script>
 </head>
 <body >
     <form autocomplete="on">
@@ -21,12 +20,13 @@
             <button type="button" onclick="login()"  >
             LOGIN</button></a>
 
-            <h4>OR</h4>
+            <h4 id="Ortag">OR</h4>
             <a href="registration.html">
                 
-                <button type="button" >REGISTRATION</button></a>
+                <button type="button" id="loginButton">REGISTRATION</button></a>
         </div>
         <span id="msg"></span>
     </div></form>
+    <script src="login.js"></script>
     </body>
 </html>

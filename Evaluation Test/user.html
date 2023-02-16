@@ -21,7 +21,7 @@
                 
                     <a href="loginsession.html">Login Session</a>
                 
-                <a href="login.html">Logout</a>
+                    <a onclick="logOut()">Logout</a>
             
         </div>
        
@@ -29,11 +29,12 @@
 
             <h4>ADD User</h4>
             <form >
-                <input type="text" id="name" placeholder="Name">
-                <input type="email" id="email" placeholder="Email">
-                <input type="password" id="password" placeholder="Password">
-                <input type="date" id="date">
-                <button type="button" id="userbtn" onclick="addUser()">ADD User</button>
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="date" id="date" required>
+                <button type="button" id="userbtn" onclick="addUser()">ADD User</button><br>
+                <span id="err"></span>
             </form>
             <table id="myTable">
                 <tr>
