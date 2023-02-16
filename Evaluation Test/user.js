@@ -1,21 +1,20 @@
 
-function deleteUser() {
-    myTable.deleteRow(-1)
-    
-     
-}
-
-function cells(){ 
-    getData = JSON.parse(localStorage.getItem('Users'));
+loginStr = localStorage.getItem('Admin');
+loginObj = JSON.parse(loginStr);
+    document
+    .getElementById('username')
+        .innerHTML = loginObj.Name;
+        function cells(){ 
+            getData = JSON.parse(localStorage.getItem('Users'));
 let myTable = document.getElementById('myTable');
 
 for (i = 0; i < getData.length; i++) {
     
-
+    
     let arr = [];
     arr.push(parseInt(getData[i].Birthdate.split("/")));
     let row = myTable.insertRow(-1)
-
+    
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -28,10 +27,10 @@ for (i = 0; i < getData.length; i++) {
     cell3.innerHTML = getData[i].Password;
     cell4.innerHTML = getData[i].Birthdate.split("-").reverse().join("-")
     cell5.innerHTML = 2023 - arr[0];
-    cell6.innerHTML = `<button onclick="">Edit</button><button onclick="deleteUser()">Delete</button>`;
- let Age= 2023-arr[0]
- 
-   console.log(arr)  
+    cell6.innerHTML = `<button onclick="edit()">Edit</button><button onclick="deleteUser()">Delete</button>`;
+    let Age= 2023-arr[0]
+    
+    
 }}
 
 function addUser() {
@@ -41,14 +40,14 @@ function addUser() {
     let useremail = document
         .getElementById('email')
         .value
-    let userpass = document
+        let userpass = document
         .getElementById('password')
         .value
-    let userdob = document
+        let userdob = document
         .getElementById('date')
         .value
-
-    userObj = {
+        
+        userObj = {
         "Name": username,
         "Email": useremail,
         "Password": userpass,
@@ -72,7 +71,11 @@ function addUser() {
 function edit() {
     document
         .getElementById("userbtn")
-        .innerText = "Update User"
+        .innerText = "Update User";
+        getData = JSON.parse(localStorage.getItem('Users'));
+
+        
+        
 }
 
 function username() {
@@ -80,13 +83,24 @@ function username() {
     loginObj = JSON.parse(loginStr);
     let storename = loginDataObj.fname;
     document
-        .getElementById('username')
-        .innerText = storename;
+    .getElementById('username')
+    .innerText = storename;
 }
 
-// let agediv=()=>{
-//     let count=0
-//     for(i=0;i<Age.length;i++){
-//         if(Age[i]>18)
-//     }
-// }
+
+
+    function deleteUser(ele){
+        var table = document.getElementById('myTable');
+        var rowCount = table.rows.length;
+        if(rowCount <= 1){
+            alert("There is no row available to delete!");
+            return;
+        }
+        if(ele){
+            //delete specific row
+            ele.parentNode.parentNode.remove();
+        }else{
+            //delete last row
+            table.deleteRow(rowCount-1);
+        }
+    }

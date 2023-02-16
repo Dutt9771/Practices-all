@@ -49,5 +49,7 @@
   }
   
   #main {
+    
+    text-align: center;
     margin-left: 200px; /* Same as the width of the sidenav */
   }

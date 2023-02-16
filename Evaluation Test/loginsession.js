@@ -17,3 +17,8 @@ for (i = 0; i < getData.length; i++) {
     cell2.innerHTML = getData[i].login_date_time;
    
 }}
+loginStr = localStorage.getItem('Admin');
+    loginObj = JSON.parse(loginStr);
+    document
+        .getElementById('username')
+        .innerHTML = loginObj.Name;

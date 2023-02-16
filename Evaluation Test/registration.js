@@ -5,7 +5,7 @@ function signUp() {
             let  pwd = document.getElementById('pwd').value;
             let city=document.getElementById("inputDistrict").value;
             let state=document.getElementById("inputState").value
-          let checkbox=document.getElementById('checkbox').value
+          let checkbox=document.getElementById('checkbox')
          Obj = {"Name": fname, "Email": email, "Password": pwd, "State": state, "City": city};
          let Details = JSON.stringify(Obj);
          localStorage.setItem("Admin", Details)
