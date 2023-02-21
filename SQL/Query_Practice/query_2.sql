@@ -1,0 +1,1 @@
+SELECT * FROM studens_and_college.students;
