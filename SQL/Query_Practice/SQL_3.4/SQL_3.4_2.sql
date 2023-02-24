@@ -96,12 +96,11 @@ CREATE TABLE employee_stats (
 -- 8. Write a query that returns the first and last name of all 
 -- employees who have the same last name as their manager.
 
-SELECT 
-    E.firstname AS 'Employee Name', M.firstname AS 'Manager'
-FROM
-    employees E
-        JOIN
-    employees M ON E.EmployeeID = M.EmployeeID
+select FirstName, LastName from Employees 
+where LastName = (
+select e.LastName  from Employees e join Position p
+on e.Position = p.id 
+where p.Position = 'Manager');
 
 -- 9. Write a query that returns the top 5 departments with the 
 -- highest average salary.
@@ -112,14 +111,37 @@ FROM
     Employees
 GROUP BY department
 ORDER BY AVG(salary) DESC
-LIMIT 5
+LIMIT 5;
 
 -- 10. Write a query that returns the first and last name of 
 -- all employees who have at least one dependent. Sort the 
 -- results by last name
 
+CREATE TABLE Dependents (
+    id INT PRIMARY KEY,
+    emp_id INT,
+    First_name VARCHAR(256),
+    last_name VARCHAR(256),
+    relation VARCHAR(256),
+    FOREIGN KEY (emp_id)
+        REFERENCES Employees (EmployeeID)
+        ON DELETE CASCADE
+);
+
+INSERT INTO Dependents (id, emp_id, First_name, last_name, relation)
+VALUES  (1, 1, 'Jane', 'Doe', 'Spouse'),
+  (2, 1, 'John', 'Doe Jr.', 'Child'),
+  (3, 3, 'Emily', 'Smith', 'Spouse'),
+  (4, 4, 'James', 'Lee', 'Child'),
+  (5, 5, 'Olivia', 'Johnson', 'Child');
+ 
 SELECT 
-    firstname, lastname, department
+    e.FirstName, e.lastName
 FROM
-    Employees
-ORDER BY lastname
+    Employees e
+        JOIN
+    Dependents d ON e.EmployeeID = d.emp_id
+GROUP BY e.EmployeeID , e.FirstName , e.lastName
+HAVING COUNT(d.id) >= 1
+ORDER BY e.lastName;
+

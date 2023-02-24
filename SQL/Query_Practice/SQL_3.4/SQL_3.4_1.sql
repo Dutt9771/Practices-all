@@ -2,16 +2,17 @@
 -- Assume you are working on a database for a car dealership. The 
 -- database contains the following tables:
 
-CREATE TABLE `cars` (
-    `carID` INT NOT NULL,
-    `brand` VARCHAR(50) NULL,
-    `model` VARCHAR(50) NULL,
-    `year` INT NULL,
-    `mileage` INT NULL,
-    `price` DECIMAL(10 , 2 ) NULL,
-    `available` BIT NULL,
-    PRIMARY KEY (`carID`)
+CREATE TABLE cars (
+    carID INT NOT NULL,
+    brand VARCHAR(50) NULL,
+    model VARCHAR(50) NULL,
+    year INT NULL,
+    mileage INT NULL,
+    price DECIMAL(10 , 2 ) NULL,
+    available BIT NULL,
+    PRIMARY KEY (carID)
 );
+
 
 INSERT INTO Cars (CarID, Brand, Model, Year, Mileage, Price, Available)
 VALUES (1, 'Toyota', 'Corolla', 2019, 25000, 15000.00, 1),(2, 'Honda', 'Civic', 2018, 28000, 17000.00, 1)
@@ -123,7 +124,7 @@ VALUES ('Toyota', 'Corolla', 2022, 0, 20000, 1);
 
 UPDATE Cars 
 SET 
-    Price = Price * 1.1;
+    price = price + price * 0.1;
 
 -- 7. Delete all sales from the Sales table that occurred before 
 -- January 1, 2022.
