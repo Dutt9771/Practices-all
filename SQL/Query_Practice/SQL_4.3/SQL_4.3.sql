@@ -2,22 +2,13 @@
 -- Assume you are given access to a database with two tables: users 
 -- and orders. 
 
--- The users table contains the following columns:
--- id (integer)
--- name (text)
--- email (text)
--- password (text)
--- created_at (timestamp)
--- updated_at (timestamp)
-
-
 CREATE TABLE users (
-  id INTEGER PRIMARY KEY,
-  name TEXT,
-  email TEXT,
-  password TEXT,
-  created_at TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    email TEXT,
+    password TEXT,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO users (id, name, email, password, created_at, updated_at)
@@ -35,12 +26,13 @@ VALUES
 -- updated_at (timestamp)
 
 CREATE TABLE orders (
-  id INTEGER PRIMARY KEY,
-  user_id INTEGER,
-  amount FLOAT,
-  created_at TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id)
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER,
+    amount FLOAT,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id)
+        REFERENCES users (id)
 );
 
 
@@ -83,7 +75,11 @@ FROM
 -- sorted in descending order of total amount.
 
 SELECT 
-    users.id, users.name, users.email, SUM(orders.amount),orders.user_id
+    users.id,
+    users.name,
+    users.email,
+    SUM(orders.amount),
+    orders.user_id
 FROM
     users
         INNER JOIN
@@ -96,7 +92,10 @@ ORDER BY SUM(orders.amount) DESC;
 -- most orders.
 
 SELECT 
-	users.name, users.email, orders.amount,COUNT(orders.user_id) AS order_by_user
+    users.name,
+    users.email,
+    orders.amount,
+    COUNT(orders.user_id) AS order_by_user
 FROM
     users
         INNER JOIN
@@ -109,45 +108,97 @@ ORDER BY order_by_user DESC;
 -- amount of orders exceeds $100.
 
 SELECT 
-    users.id, users.name, users.email, SUM(orders.amount),orders.user_id
+    users.id,
+    users.name,
+    users.email,
+    SUM(orders.amount),
+    orders.user_id
 FROM
     users
         INNER JOIN
     orders ON orders.user_id = users.id
 GROUP BY users.name
-HAVING SUM(orders.amount)>100
+HAVING SUM(orders.amount) > 100
 ORDER BY SUM(orders.amount) DESC;
 
 -- 6. Retrieve the number of users who have not placed any 
 -- orders.
 
-SELECT * FROM users where id not in ( SELECT 
-    users.id
+SELECT 
+    *
 FROM
     users
-        RIGHT JOIN
-    orders ON orders.user_id = users.id
-    GROUP BY users.id );
+WHERE
+    id NOT IN (SELECT 
+            users.id
+        FROM
+            users
+                RIGHT JOIN
+            orders ON orders.user_id = users.id
+        GROUP BY users.id);
     
 -- 7. Update the user with ID 1 to change their email address to 
 -- "jane.doe@example.com".
 
-UPDATE users
-SET email='jane.doe@example.com'
-WHERE id=1;
+UPDATE users 
+SET 
+    email = 'jane.doe@example.com'
+WHERE
+    id = 1;
 
-UPDATE users
-SET email='jane.test@example.com'
-WHERE id=2;
+UPDATE users 
+SET 
+    email = 'jane.test@example.com'
+WHERE
+    id = 2;
 
 -- 8. Delete all orders placed by users whose email address 
 -- contains the string "test".
 
-DELETE FROM orders
-WHERE user_id in ( SELECT id FROM users WHERE email LIKE '%test%' );
+DELETE FROM orders 
+WHERE
+    user_id IN (SELECT 
+        id
+    FROM
+        users
+    
+    WHERE
+        email LIKE '%test%');
 
 -- 9. Retrieve the total amount of orders placed on each day of 
 -- the current week, grouped by day.
 
+SELECT 
+    users.name,
+    users.email,
+    orders.amount,
+    (orders.user_id) AS order_by_user,
+    MONTH(orders.updated_at) AS month,
+    YEAR(orders.updated_at) AS year,
+    DAY(orders.updated_at) AS day
+FROM
+    users
+        INNER JOIN
+    orders ON orders.user_id = users.id
+GROUP BY DAY(orders.updated_at);
+
 -- 10. Retrieve the IDs and email addresses of users who have 
--- placed an order in the current y
+-- placed an order in the current current year and whose email address is in the format "example.com".
+
+SELECT 
+    users.id,
+    users.name,
+    users.email,
+    orders.amount,
+    (orders.user_id) AS order_by_user,
+    MONTH(orders.updated_at) AS month,
+    YEAR(orders.updated_at) AS year,
+    DAY(orders.updated_at) AS day
+FROM
+    users
+        INNER JOIN
+    orders ON orders.user_id = users.id
+GROUP BY DAY(orders.updated_at)
+HAVING year = '2023'
+    AND email LIKE '%example.com';
+
