@@ -46,14 +46,15 @@ CREATE TABLE orders (
 
 
 INSERT INTO orders (id, user_id, amount, created_at, updated_at)
-VALUES
+VALUES (3, 2, 25.99, '2022-01-03 12:00:00', '2022-01-03 12:00:00'),
+ (6, 2, 65.99, '2022-01-05 14:00:00', '2022-01-05 14:00:00'),
+  (7, 1, 9.99, '2022-01-06 15:00:00', '2022-01-06 15:00:00'),
   (1, 1, 30.99, '2022-01-01 10:00:00', '2022-01-01 10:00:00'),
   (2, 1, 49.99, '2022-01-02 11:00:00', '2022-01-02 11:00:00'),
-  (3, 2, 25.99, '2022-01-03 12:00:00', '2022-01-03 12:00:00'),
+  
   (4, 3, 39.99, '2022-01-04 13:00:00', '2022-01-04 13:00:00'),
   (5, 3, 59.99, '2022-01-04 13:00:00', '2022-01-04 13:00:00'),
-  (6, 2, 65.99, '2022-01-05 14:00:00', '2022-01-05 14:00:00'),
-  (7, 1, 9.99, '2022-01-06 15:00:00', '2022-01-06 15:00:00'),
+ 
   (8, 3, 39.99, '2022-01-06 15:00:00', '2022-01-06 15:00:00');
 
 
@@ -120,18 +121,33 @@ ORDER BY SUM(orders.amount) DESC;
 -- 6. Retrieve the number of users who have not placed any 
 -- orders.
 
-SELECT 
-    users.id, users.name, users.email, orders.user_id
+SELECT * FROM users where id not in ( SELECT 
+    users.id
 FROM
     users
-        INNER JOIN
+        RIGHT JOIN
     orders ON orders.user_id = users.id
-    HAVING orders.user_id <> users.id 
-7. Update the user with ID 1 to change their email address to 
-"jane.doe@example.com".
-8. Delete all orders placed by users whose email address 
-contains the string "test".
-9. Retrieve the total amount of orders placed on each day of 
-the current week, grouped by day.
-10. Retrieve the IDs and email addresses of users who have 
-placed an order in the current y
+    GROUP BY users.id );
+    
+-- 7. Update the user with ID 1 to change their email address to 
+-- "jane.doe@example.com".
+
+UPDATE users
+SET email='jane.doe@example.com'
+WHERE id=1;
+
+UPDATE users
+SET email='jane.test@example.com'
+WHERE id=2;
+
+-- 8. Delete all orders placed by users whose email address 
+-- contains the string "test".
+
+DELETE FROM orders
+WHERE user_id in ( SELECT id FROM users WHERE email LIKE '%test%' );
+
+-- 9. Retrieve the total amount of orders placed on each day of 
+-- the current week, grouped by day.
+
+-- 10. Retrieve the IDs and email addresses of users who have 
+-- placed an order in the current y
