@@ -71,12 +71,13 @@ FROM
 -- each department, ordered by department name.
 
 SELECT 
-	Employees.name,
+	COUNT(Employees.name),
     Departments.department_name
 FROM
     Employees
    INNER JOIN
  Departments ON Departments.department_id = Employees.department_id
+GROUP BY department_name
 ORDER BY department_name;
 
 -- 3. Write a query to return the average salary for each 
@@ -107,17 +108,18 @@ FROM
 -- 	ORDER BY salary DESC
 -- 	
 
-
 -- SELECT *
 -- FROM Employees
 -- ORDER BY salary DESC
 -- LIMIT (SELECT COUNT(*) * 0.1 FROM Employees);
 
 
-SELECT * FROM employees
-ORDER BY salary DESC
-LIMIT 1;
+-- SELECT * FROM employees
+-- ORDER BY salary DESC
+-- LIMIT 1;
 
+SELECT s.salary , e.name FROM Employees e inner JOIN Salaries s ON e.employee_id = s.employee_id 
+WHERE RAND() > 0.90 GROUP BY s.salary,e.name ORDER BY s.salary DESC;
 
 -- 5. Write a query to return the salary of each employee for 
 -- their latest salary entry.

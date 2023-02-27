@@ -65,11 +65,13 @@ VALUES ('4','John Doe', 'john.doe@example.com', '123456', CURRENT_TIMESTAMP, CUR
 -- have placed at least one order.
 
 SELECT 
-    users.id, users.name, users.email, orders.user_id
+    users.id, users.name, users.email, COUNT(orders.user_id) AS ordered
 FROM
     users
         INNER JOIN
-    orders ON orders.user_id = users.id;
+    orders ON orders.user_id = users.id
+    GROUP BY users.name
+    HAVING ordered=1
     
 -- 3. Retrieve the total amount of orders placed by each user, 
 -- sorted in descending order of total amount.
@@ -161,7 +163,7 @@ WHERE
         id
     FROM
         users
-    
+
     WHERE
         email LIKE '%test%');
 
