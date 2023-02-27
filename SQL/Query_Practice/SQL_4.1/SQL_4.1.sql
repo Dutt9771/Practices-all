@@ -83,11 +83,13 @@ INSERT INTO book_category_mappings VALUES
 (3, 3, 4),
 (4, 4, 1),
 (5, 5, 3),
-(6, 6, 1),
+(6, 6, 5),
 (7, 7, 2),
 (8, 8, 5),
 (9, 9, 3),
 (10, 10, 5);
+
+
 
 
 -- Write SQL queries to solve the following problems:
@@ -111,7 +113,7 @@ FROM
     books
         INNER JOIN
     authors ON books.author_id = authors.id
-GROUP BY authors.name
+GROUP BY authors.name;
 
 -- 3. Write a query to find the name of the category with the 
 -- most number of books.
@@ -128,22 +130,19 @@ ORDER BY number_of_books DESC;
 -- 4. Write a query to find the name of the author who has 
 -- written the most number of books in the category "fiction".
 
-SELECT 
-    authors.name,
-    books.title,
-    book_category_mappings.book_id,
-    book_category_mappings.category_id,
-    book_categories.name
-FROM
-    authors
-        INNER JOIN
-    books ON books.author_id = authors.id
-        INNER JOIN
-    book_category_mappings ON books.id = book_category_mappings.book_id
-        INNER JOIN
-    book_categories ON book_categories.id = book_category_mappings.category_id
-HAVING category_id = '5'
 
+SELECT COUNT(books.author_id),authors.name,book_categories.name from books
+INNER JOIN
+    authors ON books.author_id = authors.id
+INNER JOIN
+    book_category_mappings ON books.id = book_category_mappings.book_id
+INNER JOIN
+    book_categories ON book_categories.id = book_category_mappings.category_id
+    WHERE book_categories.name='fiction'
+    GROUP BY authors.name
+    ORDER BY COUNT(books.author_id) DESC
+    LIMIT 1;
+    
 -- 5. Write a query to find the titles of the top 5 most popular 
 -- books. The popularity of a book is defined as the number of 
 -- times it has been borrowed by customers. 
