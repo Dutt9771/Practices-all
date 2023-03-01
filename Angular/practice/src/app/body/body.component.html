@@ -1,0 +1,14 @@
+<div class="center">
+    <p class="center">body works!</p>
+    <input type="text" class="input"  [value]="name" (input)="name=$any($event.target).value">
+    <input type="text" [(ngModel)]="name">
+    <h4>{{name | titlecase}}</h4><br>
+    <input type="date" [(ngModel)]="date">
+    <h4>{{date | date:'fullDate'}}</h4>
+    <h4>{{date | date:' dd / MM / YYYY'}}</h4>
+    <button class="btn red"(click)="Clicked()">Button</button>
+    <span **ngIf="name.length > 10">Too Large Name</span><br>
+    <ul>
+        <li *ngFor="let f of cars">{{f}}</li>
+    </ul>
+</div>

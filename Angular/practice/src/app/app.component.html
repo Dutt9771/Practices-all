@@ -1,0 +1,7 @@
+<h2 style="text-align: center; color: red;">Angular Practice</h2>
+<app-body></app-body>
+<div style="display: flex;justify-content: center;">
+    <app-name *ngFor="let user of  users" [name]="user.name" [college]="user.college" [depart]="user.depart"></app-name>
+</div> 
+<router-outlet></router-outlet>
+ 
