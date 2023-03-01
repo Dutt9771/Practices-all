@@ -13,4 +13,9 @@ export class BodyComponent {
   
   window.location.href="https://google.com"
 }
+fname!:string
+display=false;
+show(){
+this.display=!this.display
+}
 }

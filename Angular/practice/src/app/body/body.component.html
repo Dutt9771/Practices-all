@@ -11,4 +11,7 @@
     <ul>
         <li *ngFor="let f of cars">{{f}}</li>
     </ul>
+    <input type="text" [(ngModel)]="fname">
+    <p *ngIf="display">{{fname}}</p>
+    <button (click)="show()">SHOW</button>
 </div>
