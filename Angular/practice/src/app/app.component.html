@@ -1,19 +1,9 @@
-<h2 style="text-align: center; color: red;">Angular Practice</h2>
-<h6>hiiii</h6>
-<input type="text"  #task>
-<select name="priority" #val>
-    <option value="0" >High</option>
-    <option value="1">Medium</option>
-<option value="2">Low</option>
-</select>
-<button (click)="ADD(task.value,val.value)">ADD</button>
 
-            <ul *ngFor="let x of list; let i=index" ><li *ngFor="let y of x" [ngStyle]="{'background-color':y.bgcolor}" id="list">{{y.name}} {{y.priority}}</li></ul>
-<!-- <app-body></app-body>
-<div style="display: flex;justify-content: center;">
-    <app-name *ngFor="let user of  users" [name]="user.name" [college]="user.college" [depart]="user.depart"></app-name>
-</div>  -->
-
+<ul>
+    <li><a routerLink="home">Home</a></li>
+    <li><a routerLink="name">Name</a></li>
+    <li><a routerLink="body">Body</a></li>
+    <li><a routerLink="todo-list">Todo-List</a></li>
+  </ul>
 
 <router-outlet></router-outlet>
- 

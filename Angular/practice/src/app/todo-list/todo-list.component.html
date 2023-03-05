@@ -1,0 +1,19 @@
+<form>
+
+    <h2 style="text-align: center; color: red;">Angular Practice</h2>
+    <input type="text" name="todo-1" #todo>&nbsp;&nbsp;
+        <label for="priority-1">Priority:</label>
+        <select id="priority-1" name="priority-1" #sel>
+            <option *ngFor="let item of selectOption" [value]="item">{{item}}</option>
+        </select>
+        &nbsp;&nbsp;
+        <button class="button-35" (click)="getTask(todo.value,sel.value)">ADD</button>
+
+        <br>
+            <ul *ngFor="let item of taskarr ;let i = index">
+                <li [class]="item.pri">{{item.name}} &nbsp;&nbsp;
+                    <Button type="button" (click)="delete(i)">Delete</Button>
+                </li>
+            </ul>
+
+        </form>

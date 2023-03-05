@@ -1,19 +1,26 @@
-<div class="center">
-    <p class="center">body works!</p>
+
+<div class="row">
+    <div class="col s12 m5">
+        <div class="center"></div>
+<!-- data-Binding -->
     <input type="text" class="input"  [value]="name" (input)="name=$any($event.target).value">
     <input type="text" [(ngModel)]="name">
-    <h4>{{name | titlecase}}</h4><br>
+    <h6>Name :- {{name | titlecase}}</h6><br>
     <input type="date" [(ngModel)]="date">
-    <h4>{{date | date:'fullDate'}}</h4>
-    <h4>{{date | date:' dd / MM / YYYY'}}</h4>
+
+    <!-- data-Binding And Pip -->
+    <h6>Date :- {{date | date:' dd / MM / YYYY'}}</h6>
+    <h6>Date :- {{date | date:'fullDate'}}</h6>
+    <!--  -->
     <button class="btn red"(click)="Clicked()">Button</button>
-    <span **ngIf="name.length > 10">Too Large Name</span><br>
+
     <ul>
-        <li *ngFor="let f of cars">{{f}}</li>
+        <li *ngFor="let f of cars">Car's Name : - {{f}}</li>
     </ul>
+    
+    <!-- event binding and directives -->
     <input type="text" [(ngModel)]="fname">
-    <p *ngIf="display">{{fname}}</p>
     <button (click)="show()">SHOW</button>
-
-
+    <p *ngIf="display">Above input Text :- {{fname}}</p>
+</div>
 </div>

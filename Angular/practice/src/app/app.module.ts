@@ -2,15 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { FormsModule } from '@angular/forms';
 import { NameComponent } from './name/name.component';
+import { AppComponent } from './app.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { HomeComponent } from './home/home.component';
+import { UsersDetailsComponent } from './users-details/users-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
-    NameComponent
+    NameComponent,
+    TodoListComponent,
+    HomeComponent,
+    UsersDetailsComponent
   ],
   imports: [
     BrowserModule,
