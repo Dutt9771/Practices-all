@@ -1,26 +1,122 @@
-nav {
-    background-color: transparent;
+
+/* navbar */
+.header.topnav li.right {float: right;
+    padding-right: 10px;}
+    
+    .header {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:transparent;
+        position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      }
+      
+      li {
+        float: left;
+      }
+      .right{
+        float: right;
+        margin-right: 30px;
+      }
+      
+      li a{
+        display: inline-block;
+        font-size: 35px;
+        color: black;
+        text-align: center;
+        padding: 14px 05px;
+        font-weight: bold;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: none;
+        margin-left: 40px;
+      }
+      
+      li a:active{
+        color: #007bff;
+      }
+      li a:hover{
+        color: #007bff;
+      }
+      li .AciveLink{
+        color: #007bff;
+      }
+      h3{
+        text-align: center;
+        color: white;
+      }
+      .logo{
+        margin-top: 40px;
+        color: black;
+      }
+      a{
+        margin-top: 30px;
+      }
+    /* footer */
+      footer {
+    padding: 20px;
+    text-align: left;
     position: fixed;
-    top: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
-    z-index: 999;
-  }
-  
-  nav ul {
-    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
   }
   
-  nav ul li {
+  .icon{
+    margin-left: auto;
+    margin-right: 30px;
+    
+  }
+  
+  p {
     margin: 0;
   }
   
-  nav ul li a {
-    text-decoration: none;
+  
+  svg{
+    width: 22px;
+    height: 22px;
+    align-content: space-around;
+  }
+  a{
+    text-align: right;
+    padding-right: 5px;
+  }
+  a:hover {
+    color: #007bff;
+  }
+
+
+
+  .grid-container {
+   justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 0px;
+    align-items: right;
+  }
+  .small-logo{
+    width: 100px;
+    
     color: black;
   }
-  
+  .hard{
+    color: black;
+    font-weight: bold;
+  }
+  span{
+    color: rgb(29, 28, 28);
+  }
+
+  li a:hover{
+    color: #007bff;
+  }
+  li a{
+    color: black;
+    
+    text-decoration: none;
+   
+  }

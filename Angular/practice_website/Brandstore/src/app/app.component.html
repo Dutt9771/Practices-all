@@ -1,11 +1,46 @@
 <nav>
-  <ul>
-    <li><a routerLink="dashboard/about">About</a><img src="	https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img.png" alt=""></li>
-    <li><a routerLink="dashboard/home">Home</a></li>
-    <li><a routerLink="dashboard/contact-us">Contact-Us</a></li>
-    <li><a routerLink="#">Contact</a></li>
+  <ul class="header">
+    <li><img width="120" height="120" src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/favicon-free-img-120x120.png" class="custom-logo" ></li>
+    <li><a routerLink="dashboard/home" routerLinkActive="AciveLink">Home</a></li>
+    <li><a routerLink="category/everything" routerLinkActive="AciveLink">Everything</a></li>
+    <li><a routerLink="category/accessories" routerLinkActive="AciveLink">Accessories</a></li>
+    <li><a routerLink="category/men" routerLinkActive="AciveLink">Men</a></li>
+    <li><a routerLink="category/women" routerLinkActive="AciveLink">Women</a></li>
+    
+    <li class="right"><a routerLink="dashboard/about" routerLinkActive="AciveLink">About</a></li>
+    <li class="right"><a routerLink="dashboard/contact-us" routerLinkActive="AciveLink">Contact-Us</a></li>
   </ul>
 </nav>
+<footer>
+  <div class="grid-container">
+    <div class="grid-child">
+      <img class="small-logo"src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png" alt="">
+      <br><span class="hard">The Best look anytime,anywhere</span>
+    </div>
+    <div class="grid-child">
+      <span class="hard">For Her</span><br>
+      <span ><a routerLink="category/women">Women Jeans</a></span><br>
+      <span ><a routerLink="category/women">Women Jackets</a></span><br>
+      <span ><a routerLink="category/women">Tops and Shirts</a></span><br>
+      <span ><a routerLink="category/women">Heels and Flats</a></span><br>
+      <span ><a routerLink="category/women">Women Accessories</a></span>
+    </div>
+    <div class="grid-child">
+      <span class="hard">For Him</span><br>
+      <span routerLink="category/men">Men Jeans</span><br>
+      <span routerLink="category/men">Men Jackets</span><br>
+      <span routerLink="category/men">Men Shirts</span><br>
+      <span routerLink="category/men">Men Shoes</span><br>
+      <span routerLink="category/men">Men Accessories</span>
+    </div>
+    <div class="grid-child">
+      <h6>Subscribe</h6>
+      <input type="email" placeholder="Enter Email">
+      <button type="button">Subscribe</button>
+      
+    </div>
+  </div>
+</footer>
 <footer>
      
     <p>Copyright © 2023 
@@ -19,7 +54,5 @@
     </div>
 </footer>
 
-
-<router-outlet></router-outlet>
 
 <router-outlet></router-outlet>
