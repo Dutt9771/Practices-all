@@ -18,4 +18,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     DashboardRoutingModule
   ]
 })
-export class DashboardModule { }
+export class DashboardModule { 
+  constructor(){
+
+    console.log("Dashboard Module Work!!!")
+  }
+}
