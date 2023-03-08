@@ -3,7 +3,7 @@
     <input type="text" name="ipInput" [(ngModel)]="ipAddress" required> <br><br>
     <button (click)="getIp()" *ngIf="ipInfo!=''">Get Information</button>
   </div><br><br>
-  <table *ngIf="" border="1" cellspacing="0" cellpadding="10px">
+  <table *ngIf="ipInfo!=''" border="1" cellspacing="0" cellpadding="10px">
     <tr>
       <th>IP Address</th>
       <th>Country</th>
