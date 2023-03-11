@@ -1,5 +1,5 @@
 import { style } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   [x: string]: any;
   title = 'practice';
-  
+  input_decor="This Is the Example of Input Decorator"
+  Clicked(e: any){
+    console.log(e,"object")
+  }
+
+
   }
   
   

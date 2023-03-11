@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { HomeComponent } from './home/home.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
+import { DecoratorComponent } from './decorator/decorator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { UsersDetailsComponent } from './users-details/users-details.component';
     NameComponent,
     TodoListComponent,
     HomeComponent,
-    UsersDetailsComponent
+    UsersDetailsComponent,
+    DecoratorComponent
   ],
   imports: [
     BrowserModule,

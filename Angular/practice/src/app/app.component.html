@@ -5,5 +5,6 @@
     <li><a routerLink="body">Body</a></li>
     <li><a routerLink="todo-list">Todo-List</a></li>
   </ul>
-
+  <app-decorator [input_decorator]="input_decor"></app-decorator>
+  <app-decorator (event)="Clicked($event)"></app-decorator>
 <router-outlet></router-outlet>
