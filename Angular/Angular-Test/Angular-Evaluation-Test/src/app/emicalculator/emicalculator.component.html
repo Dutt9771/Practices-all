@@ -1,0 +1,71 @@
+
+<div class="d-flex justify-content-start m-5">
+    <div>
+        <div>
+        <h4>Loan Amount: {{ loan }}</h4>
+        <input #Loandata  class="form-range" type="range" min="30000" max="5000000" (input)="loan_amount(Loandata.value)" value="100000">
+    </div>
+        <div>
+        <h4>No. of Month is: {{ month }}</h4>
+        <input #monthdata  class="form-range" type="range" min="30" max="360" (input)="month_amount(monthdata.value)" value="30">
+    </div>
+        <div>
+        <h4>Rate of Interest [ROI] is: {{ ROI }}</h4>
+        <input #ROIdata  class="form-range" type="range" min="8" max="16" (input)="ROI_amount(ROIdata.value)" value="8" step="0.05">
+    </div>
+        <!-- <div>
+        <h4>Rate of Interest [ROI] is: {{ ROI }}</h4>
+        <input #ROdata  class="form-range" type="range" min="8" max="16" (input)="calculateEMI(10000,60,9)" value="8" step="0.05">
+    </div> -->
+
+    
+</div>
+
+
+    <div class="mx-5">
+        <div>
+        <h4>Monthly EMI:</h4>
+        <h4>{{ EMI.toFixed(2) }}</h4>
+    </div>
+        <div>
+            <h4>Total Interest:</h4>
+            <h4>{{ Interest.toFixed(2) }}</h4>
+    </div>
+        <div>
+            <h4>Payable Amount:</h4>
+            <h4>{{ Payble_Amount.toFixed(2) }}</h4>
+    </div>
+        <div>
+            <h4>Interest Percentage:</h4>
+            <h4>{{ Interest_Percentage.toFixed(2) }}%</h4>
+    </div>
+
+    
+
+</div>
+
+<div class="">
+    <table >
+        <tr>
+            <!-- <th>Payment No.</th> -->
+            <th>Begining Balance</th>
+            <th>EMI</th>
+            <th>Principal</th>
+            <th>Interest</th>
+            <th>Ending Balance</th>
+        </tr>
+        <tr *ngFor="let item of getTableData()">
+            <td>{{item.one}}</td>
+            <td>{{item.two.toFixed(2)}}</td>
+            <td>{{item.three.toFixed(2)}}</td>
+            <td>{{item.four.toFixed(2)}}</td>
+            <td>{{item.five.toFixed(2)}}</td>
+            
+            <!-- <td>{{loan}}</td>
+            <td>{{EMI.toFixed(2)}}</td>
+            <td>{{Principle.toFixed(2)}}</td>
+            <td>{{InterestofTable.toFixed(2)}}</td>
+            <td>{{Endingbal.toFixed(2)}}</td> -->
+    </tr>
+    </table>
+</div>
