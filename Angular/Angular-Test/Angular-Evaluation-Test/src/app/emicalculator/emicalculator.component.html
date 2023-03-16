@@ -55,7 +55,7 @@
             <th>Ending Balance</th>
         </tr>
         <tr *ngFor="let item of getTableData()">
-            <td>{{item.one}}</td>
+            <td>{{item.one.toFixed(2)}}</td>
             <td>{{item.two.toFixed(2)}}</td>
             <td>{{item.three.toFixed(2)}}</td>
             <td>{{item.four.toFixed(2)}}</td>

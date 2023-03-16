@@ -59,10 +59,15 @@ this.Endingbal=loan-this.Principle
     getTableData() {
       let obj: any[] = [];
       let tableBeggingBalance = this.loan;
+      tableBeggingBalance.toFixed(2)
       let tableEMI = this.EMI;
-      let tableEndingBalance = tableBeggingBalance - tableEMI;
+      tableEMI.toFixed(2)
       let interestAmount = (this.ROI / 1200) * tableBeggingBalance;
+      interestAmount.toFixed(2)
       let tablePrinciple = tableEMI - interestAmount;
+      tablePrinciple.toFixed(2)
+      let tableEndingBalance = tableBeggingBalance - tablePrinciple;
+      tableEndingBalance.toFixed(2)
       for (let i = 0; i < this.month; i++) {
         let dupObj = {
           one: tableBeggingBalance,
@@ -73,9 +78,9 @@ this.Endingbal=loan-this.Principle
         };
         obj.push(dupObj);
         tableBeggingBalance = tableEndingBalance;
-        tableEndingBalance = tableBeggingBalance - tableEMI;
         interestAmount = (this.ROI / 1200) * tableBeggingBalance;
         tablePrinciple = tableEMI - interestAmount;
+        tableEndingBalance = tableBeggingBalance - tablePrinciple;
       }
       return obj;
     }
