@@ -59,7 +59,7 @@ this.Endingbal=loan-this.Principle
     getTableData() {
       let obj: any[] = [];
       let tableBeggingBalance = this.loan;
-      tableBeggingBalance.toFixed(2)
+      // tableBeggingBalance.toFixed(2)
       let tableEMI = this.EMI;
       tableEMI.toFixed(2)
       let interestAmount = (this.ROI / 1200) * tableBeggingBalance;

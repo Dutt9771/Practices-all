@@ -10,6 +10,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { HomeComponent } from './home/home.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
 import { DecoratorComponent } from './decorator/decorator.component';
+import { TextDataComponent } from './text-data/text-data.component';
+import { NotificationBarComponent } from './notification-bar/notification-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { DecoratorComponent } from './decorator/decorator.component';
     TodoListComponent,
     HomeComponent,
     UsersDetailsComponent,
-    DecoratorComponent
+    DecoratorComponent,
+    TextDataComponent,
+    NotificationBarComponent
   ],
   imports: [
     BrowserModule,

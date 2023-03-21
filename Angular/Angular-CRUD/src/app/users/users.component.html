@@ -1,0 +1,62 @@
+<!-- 
+<form
+class="row g-3 m-lg-5 d-flex justify-content-center"
+[formGroup]="userform"
+(ngSubmit)="User_Click()"
+novalidate="novalidate">
+
+<div class="row g-3 d-flex justify-content-center">
+    <div class="col-md-4">
+        <label for="inputname4" class="form-label">Name</label>
+        <input
+            type="text"
+            formControlName="name"
+            class="form-control"
+            id="inputname4"
+            placeholder="Enter Name"
+            ></div>
+    </div>
+    <div
+        *ngIf="userform_data.name.touched && userform_data.name.invalid"
+        class="text-danger text-center">
+        <div *ngIf="userform_data.name.errors?.['required']" class="text-danger">Name Must Required</div>
+
+    </div>
+    <div class="row g-3 d-flex justify-content-center">
+        <div class="col-md-4">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                id="inputEmail4"
+                placeholder="Enter Email"
+                ></div>
+        </div>
+        <div
+            *ngIf="userform_data.email.touched && userform_data.email.invalid"
+            class="text-danger text-center">
+            <div *ngIf="userform_data.email.errors?.['required']" class="text-danger">Email Must Required</div>
+            <div *ngIf="userform_data.email.errors?.['email']" class="text-danger">Please Enter Valid Email</div>
+        </div>
+
+
+            <div class="d-grid gap-2 col-3 col-md-2 mx-auto">
+
+                <button type="submit" [disabled]="!userform.valid" class="btn btn-primary">ADD</button>
+                <button type="submit" [disabled]="!userform.valid" class="btn btn-primary" (click)="Update()">Update</button>
+                <div *ngIf="!userform.valid" class="text-danger">Please Enter All Details</div>
+
+           </div> 
+             </div>
+
+        </form> --> 
+
+
+
+<ul>
+    <li #id *ngFor="let item of user_data[0]">Id: {{item.id}} <br/>Name : {{item.name}} <br/> Email : {{item.email}}
+    <br/>
+<button type="button" class="btn btn-primary m-1" (click)="Edit(item.id)">Edit</button> 
+<button type="button" class="btn btn-primary" (click)="Delete(item)">Delete</button></li>
+</ul>
