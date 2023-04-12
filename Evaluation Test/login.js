@@ -54,7 +54,7 @@ function login() {
                 localStorage.setItem('Session', x);
                 }
                 let withDate = JSON.parse(localStorage.getItem('Session'));
-                withDate.push(SessObj);
+                withDate.push(  );
                 localStorage.setItem("Session", JSON.stringify(withDate));
                 if (userstoreEmail == email && userstorePass == pwd) {
                     document.getElementById("msg").innerText="Welcome User";
