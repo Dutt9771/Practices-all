@@ -6,17 +6,67 @@ import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
 
 function Calculator() {
+  let Operator_Arr=["-","+","*","/","."]
   const [result, setResult] = useState("");
   const click = (e) => {
-    let resultLast_letter = result.charAt(result.length - 1);
-    let Arr=["-","+","*","/","."]
-    setResult(result.concat(e.target.value));
+    // let resultLast_letter = result.charAt(result.length - 1);
+    let Last_letter = result.charAt(result.length - 1);
+            if(Operator_Arr.includes(Last_letter)){
+              if(Operator_Arr.includes(e.target.value)){
+              console.log("LastOPerator ",Last_letter);
+              setResult(result.concat(""))
+              }
+              else{
+                setResult(result.concat(e.target.value));
+              }
     console.log("result", result);
+            }else{
+              setResult(result.concat(e.target.value));
+            }
   };
+  
+  
   const Key=(e)=>{
-    console.log(e.target.value)
-    console.log("result", result);
+    // let Operator_Arr=[]
+          let Arr=["-","+","*","/",".","1","2","3","4","5","6","7","8","9","0"]
+      document.addEventListener('keydown',(e)=>{
+        // console.log("e",e.key)
+          if(Arr.includes(e.key)){
+            let Last_letter = result.charAt(result.length - 1);
+            if(Operator_Arr.includes(Last_letter)){
+              if(Operator_Arr.includes(e.key)){
+              console.log("LastOPerator ",Last_letter);
+              setResult(result.concat(""))
+              }
+              else{
+                setResult(result.concat(e.key))
+              }
+            }else{
+              setResult(result.concat(e.key))
+              console.log("result", result);
+            }
+            }
+              // setResult(result.concat(e.key))
+              // console.log("result", result);
+          
+          else if(e.key==="Enter"){
+              equal();
+              // console.log("result", result);
+          }else if(e.key==="Backspace"){
+              del();
+              // console.log("result", result);
+          }else if(e.key==="Delete"){
+              clear();
+              // console.log("result", result);
+          }else if(e.key==="Escape"){
+              clear();
+          }
+        })
+      // useEffect
+      // console.log(e.target.value)
+    // console.log("result", result);
   }
+
   const clear = () => {
     setResult("");
     document.getElementById("err").innerHTML = "";
@@ -28,34 +78,39 @@ function Calculator() {
   };
   const equal = () => {
     if(result){
+      let Last_letter = result.charAt(result.length - 1);
+            if(Operator_Arr.includes(Last_letter)){
+              // setResult(result.slice(0, -1));
+              // eslint-disable-next-line no-eval
+              setResult(eval(result.slice(0, -1)).toString());
+              }else{
 
-        console.log("result", result);
-        // console.log("result",typeof(result))
-        let resultFirst_letter = result.charAt(0);
+                
+                console.log("result", result);
+                // console.log("result",typeof(result))
+                let resultFirst_letter = result.charAt(0);
         let resultLast_letter = result.charAt(result.length - 1);
         let Arr=["-","+","*","/","."]
-        for(let i=0;i<result.length;i++){
-            let consequent = result.charAt(i);
-            let next = result.charAt(i+1);
-            for(let j=0;j<Arr.length;j++){
+        
+            let consequent = result.charAt(result.length - 2);
+            let next = result.charAt(result.length - 1);
 
-                if(consequent === Arr[j] && next === Arr[j]){
+
+            if(Arr.includes(consequent) && Arr.includes(next)){
                     console.log(consequent,next)
                     document.getElementById("err").innerHTML = "Please Enter Valid Expression";
-                }else{
+                  }else{
                     document.getElementById("err").innerHTML = "";
                 }
-            }
-        }
-        
-        if (
-            resultFirst_letter === "-" ||
-      resultFirst_letter === "+" ||
-      resultFirst_letter === "*" ||
-      resultFirst_letter === "/" ||
-      resultFirst_letter === "." ||
-      resultLast_letter === "-" ||
-      resultLast_letter === "+" ||
+                
+                if (
+                  resultFirst_letter === "-" ||
+                  resultFirst_letter === "+" ||
+                  resultFirst_letter === "*" ||
+                  resultFirst_letter === "/" ||
+                  resultFirst_letter === "." ||
+                  resultLast_letter === "-" ||
+                  resultLast_letter === "+" ||
       resultLast_letter === "*" ||
       resultLast_letter === "/" ||
       resultLast_letter === "."
@@ -63,23 +118,25 @@ function Calculator() {
           document.getElementById("err").innerHTML =
           "Please Enter Valid Expression";
         } else {
-            setResult(eval(result).toString());
-            document.getElementById("err").innerHTML = "";
+          // eslint-disable-next-line no-eval
+          setResult(eval(result).toString());
+          document.getElementById("err").innerHTML = "";
         }
-    }
+      }
+      }
     };
     return (
-    <>
+      <>
       <h2 className="heading">Calculator</h2>
 
       <Box
         sx={{ flexGrow: 1 }}
         style={{ width: "400px", margin: "auto", textAlign: "center" }}
       >
+        {/* value={result} */}
         <Input
           style={{ width: "280px", marginBottom: "10px", textAlign: "right" }} type="text"
-          value={result}
-          onKeyDown={() => setResult(result.toString())} 
+          onKeyDown={Key} value={result} placeholder="0"
         />
         <br />
         <span
